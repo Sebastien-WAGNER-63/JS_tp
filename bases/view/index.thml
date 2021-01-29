@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+	<head></head>
+	<body>
+		<h1>Cours de JS 2020-2021</h1>
+
+		<h2 id="titleNews"><h2>
+
+		<h2 id="titlePicture"><h2>
+	</body>
+	<script type="text/javascript">
+		{
+			var i = 1; //Variable global (à éviter)
+			let i = 1; //Contenu dans le bloque de code
+			const i = 1; //Constante
+			console.log(i); // Affiche dans la console
+		}
+		//Peut avoir plusieurs bloques de codes
+		{
+			{
+				//Bloque 1
+			}
+			{
+				//Bloque 2
+			}
+		}
+		//Doc Mozilla => "if mdn" Dans la recherche
+		{
+			let t = 2;
+			let x = 0;
+			
+			//let s accessible que dans le if
+			if(true){
+				let s = 1;
+				for(let i = 0; i<t; i++){
+					x += s;
+				}
+			}
+
+			
+
+		}
+	</script>
+</html>
