@@ -25,7 +25,7 @@
 		<form id="addNewsForm">
 			Nom de la news : <input name="titleToAdd" type="text">
 
-			<input type="submit" name="addNewsBtn" />
+			<input id="submit" type="submit" name="addNewsBtn" />
 		</form>
 
 	</body>
@@ -38,10 +38,10 @@
 
 		{
 			for (let i = 0; i < 5; i++){
-				if(i==0){
+				if(i===0){
 					console.log(vert);
 				}
-				else if(i % 2 == 0){
+				else if(i % 2 === 0){
 					console.log(rouge);
 				}
 				else{
@@ -84,21 +84,16 @@
 		{
 			console.log(' --------------- EXO 5 : --------------- ');
 		}
-		/*
+
 		{
-			window.addEventListener("load", function(){
-				let form = document.getElementById("myForm");
-				form.addEventListener("submit", function(){
-					event.preventDefault();
-				});
-			});
-		}
-		*/
-		{
-			let form = document.getElementById("myForm");
-			form.addEventListener("submit", function(){
-				console.log(titleToAdd.innerHTML);
-			});
+			let form = document.querySelector('#submit');
+			form.onclick = function(){
+				laFonction();
+			}
+
+			function laFonction(){
+				console.log(document.getElementById('title').value);
+			}
 		}
 	</script>
 </html>
