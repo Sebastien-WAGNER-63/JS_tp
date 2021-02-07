@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+	<head>
+		<title>TP1</title>
+		
+	</head>
+	<body>
+		<h1>Cours de JS 2020-2021</h1>
+
+		<section id="news">
+			<h2 id="titleNews">News</h2>
+			<article>
+				<h3 class="title">News 1</h3>
+			</article>
+
+			<article>
+				<h3 class="title">News 2</h3>
+			</article>
+
+			<article>
+				<h3 class="title">News 3</h3>
+			</article>
+		</section>
+
+		<form id="addNewsForm">
+			Nom de la news : <input name="titleToAdd" type="text">
+
+			<input type="submit" name="addNewsBtn" />
+		</form>
+
+	</body>
+	<script type="text/javascript" src="./color.js"></script>
+	<script type="text/javascript">
+		{
+			console.log('Ceci est le TP1 de javascript : ');
+			console.log(' --------------- EXO 1 : --------------- ');
+		}
+
+		{
+			for (let i = 0; i < 5; i++){
+				if(i==0){
+					console.log(vert);
+				}
+				else if(i % 2 == 0){
+					console.log(rouge);
+				}
+				else{
+					console.log(bleu);
+				}
+			}
+		}
+
+		{
+			console.log(' --------------- EXO 2 : --------------- ');
+		}
+
+		{
+			let elements = document.getElementsByTagName("h1");
+			Array.prototype.forEach.call(elements, function(ele){
+				console.log(ele.innerHTML);
+			});
+		}
+
+		{
+			console.log(' --------------- EXO 3 : --------------- ');
+		}
+
+		{
+			let h2 = document.getElementById("titleNews");
+			console.log(h2.innerHTML);
+		}
+
+		{
+			console.log(' --------------- EXO 4 : --------------- ');
+		}
+
+		{
+			let text = document.getElementsByClassName("title");
+			Array.prototype.forEach.call(text, function(tits){
+				console.log(tits.innerHTML);
+			});
+		}
+
+		{
+			console.log(' --------------- EXO 5 : --------------- ');
+		}
+		/*
+		{
+			window.addEventListener("load", function(){
+				let form = document.getElementById("myForm");
+				form.addEventListener("submit", function(){
+					event.preventDefault();
+				});
+			});
+		}
+		*/
+		{
+			let form = document.getElementById("myForm");
+			form.addEventListener("submit", function(){
+				console.log(titleToAdd.innerHTML);
+			});
+		}
+	</script>
+</html>
