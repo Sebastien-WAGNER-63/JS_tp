@@ -1,36 +1,3 @@
-<!doctype html>
-<html>
-	<head>
-		<title>TP1</title>
-		
-	</head>
-	<body>
-		<h1>Cours de JS 2020-2021</h1>
-
-		<section id="news">
-			<h2 id="titleNews">News</h2>
-			<article>
-				<h3 class="title">News 1</h3>
-			</article>
-
-			<article>
-				<h3 class="title">News 2</h3>
-			</article>
-
-			<article>
-				<h3 class="title">News 3</h3>
-			</article>
-		</section>
-
-		<form id="addNewsForm">
-			Nom de la news : <input name="titleToAdd" type="text">
-
-			<input id="submit" type="submit" name="addNewsBtn" />
-		</form>
-
-	</body>
-	<script type="text/javascript" src="./color.js"></script>
-	<script type="text/javascript">
 		{
 			console.log('Ceci est le TP1 de javascript : ');
 			console.log(' --------------- EXO 1 : --------------- ');
@@ -86,14 +53,42 @@
 		}
 
 		{
-			let form = document.querySelector('#submit');
+			let form = document.querySelector('#submit');	
 			form.onclick = function(){
-				laFonction();
+				let {i, name} = laFonctionVerif();
+				if(i === 1){
+					creation(name);
+				}
 			}
 
-			function laFonction(){
-				console.log(document.getElementById('title').value);
+			function laFonctionVerif(){
+				let titre = document.querySelector('input[name="titleToAdd"]');
+				document.querySelectorAll('h3').forEach(function(nom){
+					let verif = 0;
+					if(nom.innerText === titre.value){
+						form = document.querySelector('form');
+						form.innerHTML = 'article non unique : <input name="titleToAdd" type="text">';
+						form.style.color = rouge;
+						verif = verif + 1;
+					} 
+					let name = titre.value;
+					if(verif>0){
+						let i = 0;
+						return {i,name};
+					} else {
+						let i = 1;
+						return {i,name};
+					}
+				});
+
+			}
+
+			function creation(nom){
+				let art = document.creatElement('article');
+				let h = document.creatElement('h3');
+				let news = document.querySelector('#news');
+				h.innerHTML = nom;
+				art.append(h);
+				news.append(article);
 			}
 		}
-	</script>
-</html>
