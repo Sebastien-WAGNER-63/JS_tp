@@ -1,4 +1,3 @@
-# JS_tp
-Tp de javascript 
-##!!!!! ATTENTION !!!!! 
-L'architecture est foireuse, il manque les dossier vides 
+# JS_tp    
+##!!!!! ATTENTION !!!!!    
+L'architecture est foireuse, il manque les dossier vides    
