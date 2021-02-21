@@ -10,15 +10,15 @@ class Article {
 	}
 
 	createNews(){
-		if (this.id[0]===0){
-			if (this.id[1]===0){
-				let idB = "monBut" + this.id[2].toString();
+		if (parseInt(this.id[0],10)===0){
+			if (parseInt(this.id[1],10)===0){
+				let idB = "monBut" + this.id[2];
 			} else{
-				let idB = "monBut"+this.id[1].toString();
-				idB = idB+this.id[2].toString();
+				let idB = "monBut"+this.id[1];
+				idB = idB+this.id[2];
 			}
 		} else{
-			let idB = "monBut"+this.id.toString();
+			let idB = "monBut"+this.id;
 		}
 		let newArticle = document.createElement('article');
 		let h3 = document.createElement('h3');
