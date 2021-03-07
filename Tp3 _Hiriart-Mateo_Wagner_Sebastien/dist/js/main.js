@@ -34,33 +34,43 @@ var yyyy = today.getFullYear();
 today = yyyy + '-' + dd + '-' + mm;
 
 
-/* Requete Ajax qui merde
+//Toujours une erreur ajax
 $.ajax({
-	url:'http://newsapi.org/v2/everything?q=minecraft&from='+ '2021-03-07' +'&sortBy=publishedAt&apiKey=9b4e42c6404c48cab0f04cb200654d6c&pageSize=5',
-	methode: 'GET',
-	dataType: 'html'
+    url:'http://newsapi.org/v2/everything?q=minecraft&from=%27+ today +'&sortBy=publishedAt&apiKey=9b4e42c6404c48cab0f04cb200654d6c&pageSize=5',
+    methode: 'GET',
+    dataType: 'json',
+    cors: true ,
+    contentType:'application/json',
+    secure: true,
+    headers: {
+        'Access-Control-Allow-Origin': '*',
+    },
+    beforeSend: function (xhr) {
+        xhr.setRequestHeader ("Authorization", "Basic " + btoa(""));
+    },
+
 })
 .done(function(data, textStatus, xhr) {
-	if(xhr.status >= 300 && xhr.status < 400)
-		console.log('Attention redirection');
+    if(xhr.status >= 300 && xhr.status < 400)
+        console.log('Attention redirection');
 
-	console.log(xhr);
-	console.log(xhr.status);
-	console.log(textStatus);
-	console.log(data); //JSON
-	console.log(data.headers); //JSON
-	var obj = jQuery.parseJSON(data);
-	$.each(obj, function (index, value) {
-	    console.log(value);
-	    let a = new Article(value.id, value.title, value.description);
-		a.addArticle();
-	});
+    console.log(xhr);
+    console.log(xhr.status);
+    console.log(textStatus);
+    console.log(data); //JSON
+    console.log(data.headers); //JSON
+    var obj = jQuery.parseJSON(data);
+    $.each(obj, function (index, value) {
+        console.log(value);
+        let a = new Article(value.id, value.title, value.description);
+        a.addArticle();
+    });
 })
 .fail(function(xhr, textStatus, error) {
-	console.log(xhr.status);
-	console.log(textStatus);
-	throw new Error(error);
-});*/
+    console.log(xhr.status);
+    console.log(textStatus);
+    throw new Error(error);
+});
 
 
 //Onglet affichage 
